@@ -1,0 +1,124 @@
+.main-image-container {
+    position: relative;
+}
+
+.js-product-gallery__wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.product-thumbanails {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: none;
+}
+
+.product-thumbanail__item img {
+    border-radius: 1rem;
+}
+
+.product-thumbanail__item.swiper-slide-thumb-active img {
+    border: 2px solid rgb(var(--color-foreground));
+}
+
+.js-product-gallery__wrapper .gallery-video-buttons {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.js-product-gallery__wrapper .gallery-video-buttons > button {
+    flex-basis: 50%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    border: none;
+    gap: 1rem;
+    color: rgb(var(--color-background));
+    background-color: rgb(var(--color-foreground));
+    cursor: pointer;
+}
+
+.js-product-gallery__wrapper .gallery-video-buttons > button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.js-product-gallery__wrapper .gallery-video-buttons button.js-gallery-video-button__product-test {
+    background-color: rgba(var(--color-foreground), 0.9);
+}
+
+.js-product-gallery__wrapper .js-videos-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 2;
+}
+
+.js-product-gallery__wrapper .js-videos-modal video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.js-product-gallery__wrapper .js-videos-modal .js-close-modal {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border: 2px solid rgb(var(--color-foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.js-product-gallery__wrapper .js-videos-modal .js-close-modal svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.js-product-gallery__wrapper .swiper-button-prev, 
+.js-product-gallery__wrapper .swiper-button-next {
+    color: rgb(var(--color-foreground));
+    display: flex !important;
+}
+
+.js-product-gallery__wrapper .main-swiper-button-prev, 
+.js-product-gallery__wrapper .main-swiper-button-next {
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.js-product-gallery__wrapper .main-swiper-button-prev::after,
+.js-product-gallery__wrapper .main-swiper-button-next::after {
+    font-size: 2.5rem;
+}
+
+.js-product-gallery__wrapper .thumbs-swiper-button-prev, 
+.js-product-gallery__wrapper .thumbs-swiper-button-next {
+    width: 2rem;
+    height: 2rem;
+    color: rgb(var(--color-background));
+    background-color: rgb(var(--color-foreground));
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.js-product-gallery__wrapper .thumbs-swiper-button-prev::after,
+.js-product-gallery__wrapper .thumbs-swiper-button-next::after {
+    font-size: 1.5rem;
+}

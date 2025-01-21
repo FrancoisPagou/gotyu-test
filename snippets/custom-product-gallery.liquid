@@ -1,0 +1,98 @@
+{% comment %}
+  Renders a product media gallery. Should be used with 'custom-gallery.js'
+
+  Usage:
+  {% render 'custom-product-gallery' %}
+{% endcomment %}
+
+<div class="js-product-gallery__wrapper">
+	<div class="main-image-container js-main-image-container swiper">
+		{% if section.settings.product_video != blank or section.settings.video_test != blank %}
+			<div class="js-videos-modal hidden">
+				<span class="js-close-modal">
+					{{ 'icon-close.svg' | inline_asset_content }}
+				</span>
+				{% if section.settings.product_video != blank %}
+					<div class="js-video-modal__video">
+						{{
+							section.settings.product_video
+							| video_tag:
+							image_size: '1100x',
+							autoplay: false,
+							loop: false,
+							controls: false,
+							muted: true
+						}}
+					</div>
+				{% endif %}
+				{% if section.settings.video_test != blank %}
+					<div class="js-video-modal__test">
+						{{
+							section.settings.video_test
+							| video_tag:
+							image_size: '1100x',
+							autoplay: false,
+							loop: false,
+							controls: false,
+							muted: true
+						}}
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
+		<div class="product-gallery__items swiper-wrapper">
+			{% for media in product.media  %}
+				<div class="product-gallery__item swiper-slide">
+					{{
+						media.preview_image
+						| image_url: width: 1920
+						| image_tag:
+							loading: 'lazy',
+							id: media.id,
+							alt: media.alt
+						| escape
+					}}
+				</div>
+			{% endfor %}
+		</div>
+		<div class="main-swiper-button-prev swiper-button-prev"></div>
+		<div class="main-swiper-button-next swiper-button-next"></div>
+		<div class="product-thumbanails js-product-thumbanails">
+			<div class="product-thumbanails__items swiper-wrapper">
+				{% for media in product.media  %}
+					<div class="product-thumbanail__item swiper-slide">
+						{{
+							media.preview_image
+							| image_url: width: 100, height: 100
+							| image_tag:
+								loading: 'lazy',
+								id: media.id,
+								alt: media.alt
+							| escape
+						}}
+					</div>
+				{% endfor %}
+			</div>
+			<div class="thumbs-swiper-button-prev swiper-button-prev"></div>
+			<div class="thumbs-swiper-button-next swiper-button-next"></div>
+		</div>
+	</div>
+	<div class="gallery-video-buttons">
+		<button 
+			type="button" 
+			data-video-type="Test" 
+			class="js-gallery-video-button js-gallery-video-button__product-test"
+		>
+			{{ 'icon-play.svg' | inline_asset_content }}
+			<span>ProduktTest</span>
+		</button>
+		<button 
+			type="button" 
+			data-video-type="Product" 
+			class="js-gallery-video-button js-gallery-video-button__product-video"
+		>
+			{{ 'icon-play.svg' | inline_asset_content }}
+			<span>ProduktVideo</span>
+		</button>
+	</div>
+</div>

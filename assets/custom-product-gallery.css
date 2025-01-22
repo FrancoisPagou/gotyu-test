@@ -122,3 +122,16 @@
 .js-product-gallery__wrapper .thumbs-swiper-button-next::after {
     font-size: 1.5rem;
 }
+
+@media screen and (max-width: 749px) {
+    .js-product-gallery__wrapper .main-swiper-button-prev:after, 
+    .js-product-gallery__wrapper .main-swiper-button-next:after {
+        font-size: 1.5rem;
+    }
+
+    .js-product-gallery__wrapper .main-swiper-button-prev, 
+    .js-product-gallery__wrapper .main-swiper-button-next {
+        width: 3rem;
+        height: 3rem;
+    }
+}

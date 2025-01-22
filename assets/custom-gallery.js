@@ -39,7 +39,9 @@ $(document).ready(function(event) {
         let $videoProduct = $(this).closest('.js-product-gallery__wrapper').find('.js-video-modal__video');
         
         $videoContainer.removeClass('hidden');
-        $videoContainer.find('video').get(0).play();
+        $videoContainer.find('video').each((index, element) => {
+            element.play();
+        });
 
         if (videoType == 'Test') {
             $videoTest.show();
